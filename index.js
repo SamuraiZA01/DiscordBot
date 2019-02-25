@@ -2,7 +2,7 @@ const Commando = require('discord.js-commando');
 const bot = new Commando.Client({commandPrefix: '&'});
 const { Client, Attachment } = require('discord.js');
 const superagent = require('superagent');
-const TOKEN = 'NTQ3MDg0NjgxOTc2MjE3NjAw.D1BQ8w.CY6sWqQu1lNhCkz0ot0ZMAzgbB8'
+
 bot.on('ready', () => {
   bot.user.setStatus('available')
   bot.user.setPresence({
@@ -51,4 +51,4 @@ bot.music.start(bot, {
   ,botPrefix: '$'
 });
 
-bot.login(TOKEN);
+bot.login(process.env.BOT_TOKEN);
