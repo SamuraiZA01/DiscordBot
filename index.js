@@ -21,9 +21,8 @@ bot.on('ready', () => {
 
 bot.registry.registerGroup('meme', 'Meme');
 bot.registry.registerDefaults();
-
-
 global.servers = {};
+
 
 bot.on('guildMemberAdd', member => {
   
@@ -42,7 +41,23 @@ bot.on('message', message => {
     }
   });
   
-  
+bot.on('message', async message=>{
+
+if(message.channel.content === 'meme'){
+
+  let {body} = await superagent
+.get('https://api-to.get-a.life/meme');
+
+const { text } = args;
+const embed = new RichEmbed()
+    .setTitle("Meme")
+    .setColor(0x00AE86)
+    .setImage(body.url);
+return message.channel.send(embed);
+}
+
+
+});  
 
 const Discord = require('discord.js');
 bot.music = require("discord.js-musicbot-addon");
