@@ -1,5 +1,5 @@
 const Commando = require('discord.js-commando');
-const bot = new Commando.Client({commandPrefix: '&'});
+const bot = new Commando.Client({commandPrefix: '$'});
 const { Client, Attachment } = require('discord.js');
 const superagent = require('superagent');
 
