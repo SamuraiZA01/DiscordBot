@@ -43,7 +43,7 @@ bot.on('message', message => {
   
 bot.on('message', async message=>{
 
-if(message.channel.content === 'meme'){
+if(message.content === 'meme'){
 
   let {body} = await superagent
 .get('https://api-to.get-a.life/meme');
