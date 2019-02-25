@@ -21,7 +21,7 @@ bot.on('ready', () => {
 
 bot.registry.registerGroup('meme', 'Meme');
 bot.registry.registerDefaults();
-bot.registry.registerCommandsIn(__dirname + '/commands');
+
 
 global.servers = {};
 
