@@ -41,23 +41,32 @@ bot.on('message', message => {
     }
   });
   
-bot.on('message', async message=>{
-
-if(message.content === 'meme'){
-
+class Memecommand  
+  {
+  
+  constructor(client)
+  {
+  (client,{
+      name: 'meme',
+      group: 'meme',
+      memberName: 'meme',
+      description: 'sends a random meme',
+      
+  });
+  }
+  
+  async run(message, args)
+  {
   let {body} = await superagent
-.get('https://api-to.get-a.life/meme');
-
-const { text } = args;
-const embed = new RichEmbed()
-    .setTitle("Meme")
-    .setColor(0x00AE86)
-    .setImage(body.url);
-return message.channel.send(embed);
-}
-
-
-});  
+  .get('https://api-to.get-a.life/meme');
+  
+  const { text } = args;
+  const embed = new RichEmbed()
+      .setTitle("Meme")
+      .setColor(0x00AE86)
+      .setImage(body.url);
+  return message.channel.send(embed);
+  }}  
 
 const Discord = require('discord.js');
 bot.music = require("discord.js-musicbot-addon");
