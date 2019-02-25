@@ -21,7 +21,7 @@ bot.on('ready', () => {
 
 bot.registry.registerGroup('meme', 'Meme');
 bot.registry.registerDefaults();
-bot.registry.registerCommandsIn(__dirname + 'SamuraiZA01/DiscordBot/tree/master/commands/');
+bot.registry.registerCommandsIn(__dirname + 'DiscordBot/commands');
 
 global.servers = {};
 
